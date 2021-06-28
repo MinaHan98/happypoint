@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- owl 캐러셀 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
+    <title></title>
+    <style type="text/css">
+
+html, body, div, ul, li { margin:0; padding:0; }
+
+#blogMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#blogMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#blogMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#blogMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#blogMenu ul li:hover ul {
+  display: block;
+}
+
+#blogMenu ul ul li {
+  float:none;
+}
+
+#mainMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#mainMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#mainMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  position:relative;
+
+}
+
+#mainMenu ul li:hover ul {
+  display: block;
+}
+
+#mainMenu ul ul li {
+  float:none;
+}
+
+#sub-menu > li >  a:hover {
+ color: red;
+}
+
+#sub-menu > li > a {
+  font-size: 13.5px;
+  position: relative;
+  padding: 15px 0px;
+  text-align: center;
+  color: #777575;
+}
+
+#sub-menu >li {
+  padding: 3px;
+}
+
+#sub-menu {
+  position: relative;
+  width: 100%;
+  background-size: 40px;
+
+  display: none;
+  text-align: center;
+  padding: 40px 0px 23px 0px;
+}
+
+#joo:hover{
+  color: red;
+}
+
+        /*<제휴안내>*/
+        .inform {
+            background-color: darkorange;
+            padding: 50px 60px 150px 60px;
+            margin: 0px;
+        }
+
+        .inform_chap{
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /*<제휴안내 - 이미지>*/
+
+        .cards{
+            width: 100%;
+            height: 150px;
+            border-radius: 20px 20px 0px 0px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .cards_des{
+            width: 24%;
+            background-color: white;
+            text-align: center;
+            display: inline-block;
+            border-radius: 20px 20px 0px 0px;
+            border-right: 1px solid gainsboro;
+            border-left: 1px solid gainsboro;
+            border-top: 1px solid gainsboro;
+        }
+
+        .cards_des_h3{
+            height: 24px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+
+        .cards_bottom{
+            display: inline-block;
+            width: 24%;
+            text-align: center;
+            border-radius: 0px 0px 20px 20px;
+            border-right: 1px solid gainsboro;
+            border-left: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+
+        }
+
+        .cards_bottom_logo{
+            border-radius: 100%;
+            border:1px solid whitesmoke;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+        }
+
+        .cards_bottom_logo_des{
+            display: inline-block;
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        /*<공지사항>*/
+
+        .notice_chap{
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .notice_list{
+            border: 1px solid gainsboro;
+            width: 1000px;
+            height: 110px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .notice_list_title{
+            float: left;
+            width: 87%;
+            height: 20%;
+            font-size: 20px;
+            text-align: left;
+            padding: 40px 10px;
+        }
+
+        .notice_list_day{
+            text-align: center;
+            float: left;
+            width: 10%;
+            height: 100%;
+			}
+
+		.notice_list_cal{
+			margin: 0px;
+			width: 90px;
+			height: 35%;
+
+		}
+
+		.notice_list_date{
+			margin: 0px;
+			width: 90px;
+			height: 65%;
+			font-size: 40px;
+
+		}
+
+		.selectbox{
+			position: absolute;
+			right: 240px;
+			width: 150px;
+			text-align:right;
+			padding: 0px;
+			z-index: 10;
+			background-color: white;
+		}
+
+		.footer_inform{
+			z-index: 0;
+			display: inline-block;
+			margin: 10px 5px;
+			font-size: 12px;
+		}
+
+	.gallerylist {max-width:1050px;width:100%;margin:0 auto;}
+	.gallerylist > ul {font-size:0; line-height: 0;}
+	.gallerylist > ul > li {display:inline-block;vertical-align:top;width:25%;}
+	.gallerylist > ul > li > a {display:block;width:auto;text-decoration: none;}
+	.gallerylist > ul > li > a .screen {position:relative;overflow:hidden;}
+	.gallerylist > ul > li > a .screen .bottom
+	{
+		position:absolute; top:200%; left:30px;
+		z-index:2; color:#fff; font-size:15px;
+		transition:all .20s; font-weight: 700;
+		width:250px; height: 250px;  line-height: 25px
+	}
+	.gallerylist > ul > li > a .screen img {width:100%;}
+	.gallerylist > ul > li > a h3 {font-size:14px;text-align:center;padding:20px;color:#666;}
+	.gallerylist > ul > li > a .screen::after {content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:1;opacity:0;transition:all .35s;}
+	.gallerylist > ul > li > a:hover .bottom {top:25%; left: 19%}
+	.gallerylist > ul > li > a:hover .screen::after {opacity:1;}
+	.i1 {border-radius: 12px 0px 0px 0px;}
+	.i2 {border-radius: 0px 12px 0px 0px;}
+	.i3 {border-radius: 0px 0px 0px 12px;}
+	.i4 {border-radius: 0px 0px 12px 0px;}
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+	select{
+		appearance : none;
+		-webkit-appearance: none;
+		width: 150px;
+	}
+
+	select::-ms-expand{
+		display:none;
+	}
+
+	select{
+
+		background: url("../static/direction.png") right center no-repeat;
+		background-size: 20px 20px;
+	}
+
+	</style>
+
+	<script type="text/javascript">
+	function over(obj){
+		obj.style.boxShadow = "15px 20px 10px -5px whitesmoke, -10px 20px 10px -5px whitesmoke";
+	}
+
+	function out(obj){
+		obj.style.boxShadow = "none";
+	}
+
+
+	$('html').click(function(e){
+		if(!$(e.target).hasClass("sel")){
+			var p = document.getElementById("select");
+			p.size = 1;
+		}
+	});
+
+	function f(obj){
+		obj.size = 6;
+		obj.zIndex = 10;
+	}
+
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div style="display: inline-block; padding-left: 240px; font-size: 12px; color:#383737 ; padding-top: 8px;">
+  <strong>AK mall</strong>
+</div>
+
+<div style="padding-right: 260px; padding-top: 8px" id="blogMenu">
+<ul>
+<li ><a style="color: gray" href="{% url 'login' %}">로그인</a></li>
+<li><a style="color: gray" href="#">회원가입</a></li>
+<li><a style="color: gray" href="#">멤버십라운지</a></li>
+<li><a style="color: gray" href="#">매장찾기</a></li>
+<li><a style="color: gray" href="#">고객센터<strong style="font-size: 15px">∨</strong> </a>
+  <ul style="background-color: white; z-index: 100; border:thin ridge #E8E7E7">
+    <li><a href="#">Q&A</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">이용약관</a></li>
+  </ul>
+</li>
+<li><a style="font-size: 12px" href="#"><img style="vertical-align: top;" width="22px" height="22px" src="../static/card.png"><strong> 카드등록</strong></a></li>
+</ul>
+</div>
+<br><br><br>
+
+
+
+<div style="margin-top: -18px; display: inline-block; padding-left: 240px; font-size: 12px; color:#383737;">
+  <a href="{% url 'main' %}"><img src="../static/logoh.png"></a>
+</div>
+
+
+<div style="padding-right: 260px" id="mainMenu">
+<ul id="main-menu">
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px; " href="#"><strong>소개</strong></a>
+      <ul style="z-index: 20" id="sub-menu">
+        <li><a href="#"><strong>해피포인트 소개</strong></a></li>
+        <li><a href="#"><strong>해피포인트 카드</strong></a></li>
+        <li><a href="{% url 'brandintro' %}"><strong>제휴 브랜드</strong></a></li>
+        <li><a href="#"><strong>멤버십 라운지</strong></a></li>
+        <li><a href="#"><strong>해피포인트앱 소개</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>제휴</strong></a>
+      <ul style="z-index: 20" id="sub-menu">
+        <li><a href="{% url 'brandintro' %}" ><strong>제휴사 안내</strong></a></li>
+        <li><a href="#" ><strong>제휴카드 안내</strong></a></li>
+        <li><a href="#" ><strong>문화 제휴 안내</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>이벤트/쿠폰</strong></a>
+      <ul style="z-index: 20" id="sub-menu">
+        <li><a href="#"><strong>진행 이벤트</strong></a></li>
+        <li><a href="#"><strong>당첨자발표</strong></a></li>
+        <li><a href="#"><strong>모바일 쿠폰 안내</strong></a></li>
+    </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 50px;" href="#"><strong>나눔</strong></a>
+      <ul style="z-index: 20" id="sub-menu">
+        <li><a href="#"><strong>해피포인트 기부소개</strong></a></li>
+        <li><a href="#" ><strong>해피포인트 기부활동</strong></a></li>
+        <li><a href="#"><strong>해피버스데이 파티</strong></a></li>
+        <li><a href="#"><strong>해비버스데이파티<br>당첨자 발표</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>마이페이지</strong></a>
+    <ul style="z-index: 20" id="sub-menu">
+        <li><a href="#"><strong>MY 포인트</strong></a></li>
+        <li><a href="#"><strong>MY 카드</strong></a></li>
+        <li><a href="#"><strong>MY 이벤트</strong></a></li>
+        <li><a href="#"><strong>회원정보</strong></a></li>
+        <li><a href="#"><strong>1:1 상담내역</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#"><img style="padding:0px 0px 0px 43px;" class="i" src="../static/alllogo.png" width="30" height="25"></a></li>
+</ul>
+</div>
+
+<div class="carousel-1" data-carousel-1-autoplay-status="Y">
+    <div class="play" style="position: absolute; "><img style="position: relative; top: 520px; left:310px; z-index: 3" width="30px" src="../static/play.png"></div>
+    <div class="stop" style="position: absolute;"><img style="position: relative; top: 520px; left: 310px; z-index: 3;" width="30px" src="../static/pause.png"></div>
+    <ul class="owl-carousel owl-theme">
+
+        <li>
+            <div style="position: relative;">
+              <img src="https://front.happypointcard.com/upfiles/appMain/banner/normal/2020110502481711145321665417.png" height="640px">
+              <div style="position: absolute;" class="txt-btn">
+                <a style="z-index: 13;" href="#" class="txt-btn-2">1/2</a>
+              </div>
+            </div>
+          </li>
+
+        <li>
+          <div style="position: relative;">
+            <img src="https://front.happypointcard.com/upfiles/appMain/banner/normal/2020110509470336271811046109.png" height="640px">
+            <div style="position: absolute;" class="txt-btn">
+              <a style="z-index: 13" href="#" class="txt-btn-2">2/2</a>
+            </div>
+          </div>
+        </li>
+    </ul>
+</div>
+
+ <style type="text/css">
+  .owl-carousel {background position: center; width: 100%; height: 700px;  padding: 0; top: 25px; border: 0px solid #c7c7c7; overflow: hidden; }
+  .owl-carousel ul { background position: center; margin: 0px; padding: 0; top: 60px; list-style: none; }
+  .owl-carousel ul li { float: left; width: 100%; height: 700px;}
+  }
+
+  .img_wrap .btnmove{
+    position: absolute;
+    top: 350px;
+    width:50px;
+    height: 200px;
+    z-index: 1;
+    font-size: 5em;
+    opacity: 0.5;
+}
+.img_wrap .btnmove.prev{
+    left: 10px;
+}
+.img_wrap .btnmove.next{
+    right: 10px;
+}
+.img_wrap i{
+    color: #fff;
+}
+
+  .txt-btn{
+    top: 488px;
+    left: 225px;
+    padding:4px 25px;
+    border:1px solid #fff;
+    border-radius:30px;
+    letter-spacing:.05rem;
+    color:#fff;
+    transition:all .5s;
+    opacity: 0.5;
+  }
+
+a .txt-btn-2 {
+
+    border-radius:30px;
+    line-height:80;
+    letter-spacing:.05rem;
+    color:#fff;
+    transition:all .5s;
+    top:-3px;
+    opacity: 0.5;
+}
+
+    /* 노말라이즈 */
+body, ul, li {
+    list-style:none;
+    /*top: 130px;*/
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.carousel-1 > .owl-carousel > .owl-stage-outer > .owl-stage > .owl-item > .item {
+    height:800px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav {
+    margin:0 !important;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav > div {
+    padding:0;
+    margin-right: 40px;
+    margin-left: 10px;
+    border-radius:0;
+    background-color:transparent;
+    color:white;
+    position:absolute;
+    top:40%;
+    left:0;
+    transform:translateY(-50%);
+    font-size:4rem;
+    opacity: 0.5;
+    background-size: 50rem;
+    width: 0.2px;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav > div.owl-next {
+    left:auto;
+    right:0;
+}
+
+.carousel-1[data-carousel-1-autoplay-status="Y"] .play {
+    display: none;
+}
+
+.carousel-1[data-carousel-1-autoplay-status="N"] .stop {
+    display:none;
+}
+
+ </style>
+        <script type="text/javascript">
+        	function Carousel1__onTranslated() {
+    $('.carousel-1 > .owl-carousel').trigger('play.owl.autoplay');
+
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'Y');
+}
+
+$('.carousel-1 > .owl-carousel').owlCarousel({
+    autoplay:true, // 오토 플레이
+    autoplayTimeout:6000, // 오토 플레이 시에 다음 슬라이드로 넘어가는 주기, 6초
+    loop:true, // 끝에서 다시 처음으로 시작
+    margin:0,
+    nav:true,
+    navText:['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+    responsive:{
+        0:{
+            items:1
+        }
+    },
+    autoplayHoverPause:false,
+    onTranslated: Carousel1__onTranslated,
+});
+
+$('.carousel-1 .play').on('click',function(){
+    $('.carousel-1 > .owl-carousel').trigger('play.owl.autoplay');
+
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'Y');
+});
+
+$('.carousel-1 .stop').on('click',function(){
+    $('.carousel-1 > .owl-carousel').trigger('stop.owl.autoplay');
+
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'N');
+});
+
+
+            $(document).ready(function() {
+
+                var $panel = $(".rolling_panel").find("ul");
+                var itemWidth = $panel.children().outerWidth(); // 아이템 가로 길이
+                var itemLength = $panel.children().length;      // 아이템 수
+                // Auto 롤링 아이디
+                var rollingId;
+                auto();
+                // 배너 마우스 오버 이벤트
+                $panel.mouseover(function() {
+                    clearInterval(rollingId);
+                });
+                // 배너 마우스 아웃 이벤트
+                $panel.mouseout(function() {
+                    auto();
+                });
+                // 이전 이벤트
+                $("#prev").on("click", prev);
+
+                $("#prev").mouseover(function(e) {
+                    clearInterval(rollingId);
+                });
+
+                $("#prev").mouseout(auto);
+
+                // 다음 이벤트
+                $("#next").on("click", next);
+
+                $("#next").mouseover(function(e) {
+                    clearInterval(rollingId);
+                });
+
+                $("#next").mouseout(auto);
+
+                function auto() {
+
+                    // 2초마다 start 호출
+                    rollingId = setInterval(function() {
+                        start();
+                    }, 6000);
+                }
+
+                function start() {
+                    $panel.css("width", itemWidth * itemLength);
+                    $panel.animate({"left": - itemWidth + "px"}, function() {
+
+                        // 첫번째 아이템을 마지막에 추가하기
+                        $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+
+                        // 첫번째 아이템을 삭제하기
+                        $(this).find("li:first").remove();
+
+                        // 좌측 패널 수치 초기화
+                        $(this).css("left", 0);
+                    });
+                }
+
+                // 이전 이벤트 실행
+                function prev(e) {
+                    $panel.css("left", - itemWidth);
+                    $panel.prepend("<li>" + $panel.find("li:last").html() + "</li>");
+                    $panel.animate({"left": "0px"}, function() {
+                        $(this).find("li:last").remove();
+                    });
+                }
+
+                // 다음 이벤트 실행
+                function next(e) {
+                    $panel.animate({"left": - itemWidth + "px"}, function() {
+                        $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                        $(this).find("li:first").remove();
+                        $(this).css("left", 0);
+                    });
+                }
+            });
+        </script>
+
+        <div>
+ 			<h1 align="center" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif;">해피포인트 SNS</h1>
+ 			<p align="center" style="font-size: 115%; color: gray; " >더 많은 소식을 SNS로 만나보세요.</p>
+    </div>
+    <p> <br> </p>
+<div class="gallerylist">
+	<ul>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222216213535">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						-패션5 매장 정보 안내<br>-<br>
+						*주소: 서울특별시 용<br>산구 이태원로‧‧‧
+					</div>
+					<img class="i1" src="../static/sns1.jpg" >
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222213658974">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						샌드위치라고 다 같은<br>샌드위치가 아니죠!<br>프리미엄 샌드위치 브<br>랜드 리나스 매장에‧‧‧
+					</div>
+					<img src="../static/sns-2.jpg" >
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222208301542">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						-파리크라상 반포서래<br>점 정보 안내-<br>*주소: 서울 서초구 서<br>래로5길 2 (반포동‧‧‧
+					</div>
+					<img src="../static/sns-3.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222199356357">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						코시국이 된 지도 어느<br>새 1년이 되었어요😢<br>언택트 시대에 사회적<br>거리 두기는 일상이‧‧‧
+					</div>
+					<img class="i2" src="../static/sns-4.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222196881773">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						파리바게뜨, 배스킨라<br>빈스, 던킨 이용하시면<br>서<br>해피포인트 적립 잘‧‧‧
+					</div>
+					<img src="../static/sns-5.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222191241031">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						-리나스 서대문점 정<br>보-<br>*주소: 서울특별시 중<br>구 통일로 114‧‧‧
+					</div>
+					<img src="../static/sns-6.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222188008221">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						어느새 2020년 한 해<br>가 저물어가고<br>2021년의 새로운 해가<br>다가오고 있어요‧‧‧
+					</div>
+					<img src="../static/sns-7.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222184001731">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						"핸드폰 교체 얼마나<br>자주 하시나요?"<br>사용기간이 꽤 지나서<br>최신 기종으로 바꾸‧‧‧
+					</div>
+					<img src="../static/sns-8.jpg">
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222168053603">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						코로나로 인해 재택근<br>무 하는 직장인들이<br>많이 늘어나고 있어요<br>~ㅠ0ㅠ‧‧‧
+					</div>
+					<img class="i3" src="../static/sns-9.jpg" >
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222176441109">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						연말연초면 신년운세<br>많이들 보시죠?<br>사실 너무 맹신해도 문<br>제일 수 있지만‧‧‧
+					</div>
+					<img src="../static/sns-10.jpg" >
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222175780617">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						2020년 한 해가 저물<br>어가고 있네요<br>크리스마스가 열흘도<br>채 남지 않았어요!‧‧‧
+					</div>
+					<img src="../static/sns-11.jpg" >
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="https://blog.naver.com/happypoints/222170193446">
+				<div class="screen">
+					<img src="../static/logo2.png" style="position: absolute; width: 65px; height: 65px; z-index: 100; top:180px; left: 95px;">
+					<div class="bottom">
+						연말이지만 모임을 할<br>수 없는 요즘!<br>사회적 거리두기로 사<br>실상 올해 모임은 끝‧‧‧
+					</div>
+					<img class="i4" src="../static/sns-12.jpg" >
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<section>
+	<div style="background-color: darkorange;">
+		<div class="inform_chap">
+		<br><br>
+		<h2 style="font-size: 45px">제휴안내</h2>
+		<div style="margin-right: 15%; margin-left: 15%; width: 70%; padding: 0px; height: 30px;">
+			<div style="float: left; width: 66%; text-align: right;">해피포인트 카드의 혜택을 똑같이 누리세요</div>
+		    <div style="float: left; width: 34%; text-align: right; color:white;" ><small>더보기</small>
+		    </div>
+		</div>
+		</div>
+	<br><br><br><br>
+	<div>
+		<div style=" margin-left: 15%; margin-right: 15%; width: 70%">
+		<div class="cards_des"><img src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504203916687912151476.jpg" class="cards" title="제휴 사이트 새창 열기">
+			<div><h3 class="cards_des_h3" title="제휴 사이트 새창 열기" >현대백화점 해피포인트 카드</h3></div>
+		</div>
+
+		<div class="cards_des"><img src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504242116909556941101.jpg" class="cards" title="제휴 사이트 새창 열기">
+			<div><h3 class="cards_des_h3" title="제휴 사이트 새창 열기">키자니아</h3></div>
+		</div>
+
+		<div class="cards_des"><img src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504520718575796416546.jpg" class="cards" title="제휴 사이트 새창 열기">
+			<div><h3 class="cards_des_h3" title="제휴 사이트 새창 열기">신라면세점</h3></div>
+		</div>
+
+		<div class="cards_des">
+			<img src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504272417092247423761.jpg" class="cards" title="제휴 사이트 새창 열기">
+			<div><h3 class="cards_des_h3" title="제휴 사이트 새창 열기">토니모리</h3></div>
+		</div>
+
+		</div>
+
+	</div>
+
+</div>
+<div style="margin-left: 15%; margin-right: 15%; width: 70%">
+	<div class="cards_bottom" onmouseover="over(this)" onmouseout="out(this)">
+		<div style="padding-top:25px; padding-bottom: 25px;" title="제휴 사이트 새창 열기">해피포인트 5% 할인</div>
+		<div style="padding-bottom: 25px;"><div style="display: inline-block;"><img  class="cards_bottom_logo" src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504204016688258763518.jpg" title="제휴 사이트 새창 열기"></div><div class="cards_bottom_logo_des" title="제휴 사이트 새창 열기">현대백화점카드</div>
+		</div>
+	</div>
+
+	<div class="cards_bottom" onmouseover="over(this)" onmouseout="out(this)">
+		<div style="padding-top:25px; padding-bottom: 25px;" title="제휴 사이트 새창 열기">키자니아 30% 할인</div>
+			<div style="padding-bottom: 25px;"><div style="display: inline-block; "><img class="cards_bottom_logo" src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504242116909688448962.png" title="제휴 사이트 새창 열기"></div><div class="cards_bottom_logo_des" title="제휴 사이트 새창 열기">키자니아</div>
+			</div>
+	</div>
+	<div class="cards_bottom" onmouseover="over(this)" onmouseout="out(this)">
+		<div style="padding-top:25px; padding-bottom: 25px;" title="제휴 사이트 새창 열기"><small>0.3% 해피포인트 적립 또는 차감할인</small></div>
+			<div style="padding-bottom: 25px;"><div style="display: inline-block;"><img class="cards_bottom_logo" src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504520718575903974714.png" title="제휴 사이트 새창 열기"></div><div class="cards_bottom_logo_des" title="제휴 사이트 새창 열기">신라면세점(오프라인)</div>
+			</div>
+	</div>
+	<div class="cards_bottom" onmouseover="over(this)" onmouseout="out(this)">
+		<div style="padding-top:25px; padding-bottom: 25px;"><small>제품 구매금액 2% 해피포인트 적립</small></div>
+			<div style="padding-bottom: 25px;"><div style="display: inline-block;"><img class="cards_bottom_logo" src="https://front.happypointcard.com/upfiles/appMain/aliance/company/2020110504272417092405905369.png" title="제휴 사이트 새창 열기"></div><div class="cards_bottom_logo_des"title="제휴 사이트 새창 열기">토니모리</div>
+			</div>
+	</div>
+
+</div>
+</section>
+
+<!-- [공지사항] -->
+<br><br><br><br><br>
+<section class="notice">
+	<div class="notice_chap">
+		<h2 style="font-size: 45px">공지사항</h2>
+		<div style="margin-left: 400px; width: 900px;">
+			<div style="float: left; width: 60%;color: grey; text-align: right;">해피포인트 새로운 소식을 알려드립니다.</div>
+		    <div style="float: left; width: 40%; text-align:right;"><small>더보기</small>
+		    </div>
+		</div>
+<br><br>
+
+	<div>
+		<ul type="none" style="margin-left: 250px; ">
+			<li>
+				<div class="notice_list" style="border-radius: 20px 20px 0px 0px;">
+					<div class="notice_list_title" >해피포인트 사명 변경에 대한 공지 안내</div>
+					<div class="notice_list_day">
+						<div class="notice_list_cal">2021-01</div>
+						<div class="notice_list_date">18</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="notice_list" >
+					<div class="notice_list_title">해피포인트 멤버십 정책 개편 안내(2021년 2월)</div>
+					<div class="notice_list_day">
+						<div class="notice_list_cal">2021-01</div>
+						<div class="notice_list_date">05</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="notice_list" style="border-radius: 0px 0px 20px 20px">
+					<div class="notice_list_title">[공지]시스템 점검에 따른 서비스 중단 안내(12/29)</div>
+					<div class="notice_list_day">
+						<div class="notice_list_cal">2020-12</div>
+						<div class="notice_list_date">28</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+	</div>
+</section>
+
+<!-- [banner] -->
+<br><br><br><br><br>
+<section class="banner" style="margin:0px; padding: 0px;">
+	<a href="https://www.happypointcard.com/page/presentation/app.spc"><img src="../static/media/img-benefit-banner-img.png" style="width: 100%; margin:0px; padding: 0px;"></a>
+</section>
+
+
+<footer>
+	<div style="margin-left: 239px; width: 1000px; margin-bottom:30px;">
+		<div style="float: left; width: 80%"><img src="../static/media/happy.png" style="vertical-align: middle; margin-bottom: 20px;">해피포인트 고객센터 080-320-1234 <small style="color: gray;">평일 AM 9시 ~ PM 7시 주말,공유일 휴무</small>
+		</div>
+
+		<div class ="selectbox">
+			<select onclick="f(this)" class="sel" id="select" style="border-color: white; margin-bottom: 0px; z-index: 10;">
+				<option selected>패밀리 사이트</option>
+				<option>SPC</option>
+				<option>파리크라상</option>
+				<option>파리바게뜨</option>
+				<option>파스쿠찌</option>
+				<option>잠바주스</option>
+				<option>디퀸즈케이터링</option>
+				<option>배스킨라빈스</option>
+				<option>던킨도너츠</option>
+				<option>빚은</option>
+				<option>SPC외식 브랜드</option>
+				<option>브랜드몰</option>
+			</select>
+		</div>
+	</div>
+	<br>
+
+<div style=" z-index: 1;">
+
+	<hr style="width: 68%; z-index: 1; ">
+
+	<div style="margin-left: 239px; padding: 0px; margin-right: 270px; display: inline-block; z-index: 1; ">
+		<div class="footer_inform">회원이용약관</div>
+		<div class="footer_inform"><b>개인정보처리방침</b></div>
+		<div class="footer_inform">위치기반 서비스 이용약관</div>
+		<div class="footer_inform">위치사업 이용약관</div>
+		<div class="footer_inform">이메일 무단수집거부</div>
+	</div>
+	<div style="display: inline-block; z-index: 1;"><img src="../static/media/logo.png" width="175px" height="37px" title="sns페이지 새창 이동"></div>
+
+	<div style="color: grey; margin-left: 242px; z-index: 1;">
+		<small>섹타나인 사업자 등록번호:113-86-10017 경기도 성남시 증원구 사기막골로31번길 18(상대원동)
+		<p style="padding: 0; margin:0; z-index: 1;">Copyright&copy;by SPC ALL RIGHTS RESERVED.</p></small>
+		<img src="https://www.happypointcard.com/assets/pc/images/common/layout/logo-norton.png" title="인증서 보기 새창 열림">
+		<img src="https://www.happypointcard.com/assets/pc/images/common/layout/logo-spc.png" title="SPC 홈페이지로 바로가기 - 새창 열림">
+	</div>
+
+</div>
+
+</footer>
+
+<br><br><br><br><br>
+
+</body>
+
+</html>

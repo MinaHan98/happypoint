@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+
+div, ul, li { margin:0; padding:0; }
+
+#blogMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#blogMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#blogMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#blogMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#blogMenu ul li:hover ul {
+  display: block;
+}
+
+#blogMenu ul ul li {
+  float:none;
+}
+
+#mainMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#mainMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#mainMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  position:relative;
+
+}
+
+#mainMenu ul li:hover ul {
+  display: block;
+}
+
+#mainMenu ul ul li {
+  float:none;
+}
+
+#sub-menu > li >  a:hover {
+ color: red;
+}
+
+#sub-menu > li > a {
+  font-size: 13.5px;
+  position: relative;
+  padding: 15px 0px;
+  text-align: center;
+  color: #777575;
+}
+
+#sub-menu >li {
+  padding: 3px;
+}
+
+#sub-menu {
+  position: relative;
+  width: 100%;
+  background-size: 40px;
+
+  display: none;
+  text-align: center;
+  padding: 40px 0px 23px 0px;
+}
+
+#joo:hover{
+  color: red;
+}
+</style>
+</head>
+
+<body>
+  
+<div style="display: inline-block; padding-left: 240px; font-size: 12px; color:#383737 ; padding-top: 8px;">
+  <strong>AK mall</strong>
+</div>
+
+<div style="padding-right: 260px; padding-top: 8px" id="blogMenu">
+<ul>
+<li ><a style="color: gray" href="#">로그인</a></li>
+<li><a style="color: gray" href="#">회원가입</a></li>
+<li><a style="color: gray" href="#">멤버십라운지</a></li>
+<li><a style="color: gray" href="#">매장찾기</a></li>
+<li><a style="color: gray" href="#">고객센터<strong style="font-size: 15px">∨</strong> </a>
+  <ul style="background-color: white; z-index: 100; border:thin ridge #E8E7E7">
+    <li><a href="#">Q&A</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">이용약관</a></li>
+  </ul>
+</li>
+<li><a style="font-size: 12px" href="#"><img style="vertical-align: top;" width="22px" height="22px" src="card.png"><strong> 카드등록</strong></a></li>
+</ul>
+</div>
+<br><br><br>
+
+
+
+<div style="display: inline-block; padding-left: 240px; font-size: 12px; color:#383737;"> 
+  <img src="logoh.png">
+</div>
+
+
+<div style="padding-right: 260px;" id="mainMenu">
+<ul id="main-menu">
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px; " href="#"><strong>소개</strong></a>
+      <ul style="box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#"><strong>해피포인트 소개</strong></a></li>
+        <li><a href="#"><strong>해피포인트 카드</strong></a></li>
+        <li><a href="#"><strong>제휴 브랜드</strong></a></li>
+        <li><a href="#"><strong>멤버십 라운지</strong></a></li>
+        <li><a href="#"><strong>해피포인트앱 소개</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>제휴</strong></a>
+      <ul style="box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#" ><strong>제휴사 안내</strong></a></li>
+        <li><a href="#" ><strong>제휴카드 안내</strong></a></li>
+        <li><a href="#" ><strong>문화 제휴 안내</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>이벤트/쿠폰</strong></a>
+      <ul style="box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#"><strong>진행 이벤트</strong></a></li>
+        <li><a href="#"><strong>당첨자발표</strong></a></li>
+        <li><a href="#"><strong>모바일 쿠폰 안내</strong></a></li>
+    </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 50px;" href="#"><strong>나눔</strong></a>
+      <ul style="box-shadow: 10px 10px 15px #F2EEEE"id="sub-menu">
+        <li><a href="#"><strong>해피포인트 기부소개</strong></a></li>
+        <li><a href="#" ><strong>해피포인트 기부활동</strong></a></li>
+        <li><a href="#"><strong>해피버스데이 파티</strong></a></li>
+        <li><a href="#"><strong>해비버스데이파티<br>당첨자 발표</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>마이페이지</strong></a>
+    <ul style="box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#"><strong>MY 포인트</strong></a></li>
+        <li><a href="#"><strong>MY 카드</strong></a></li>
+        <li><a href="#"><strong>MY 이벤트</strong></a></li>
+        <li><a href="#"><strong>회원정보</strong></a></li>
+        <li><a href="#"><strong>1:1 상담내역</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#"><img style="padding:0px 0px 0px 43px;" class="i" src="alllogo.png" width="30" height="25"></a></li>
+</ul>
+</div>
+
+</body>
+</html>

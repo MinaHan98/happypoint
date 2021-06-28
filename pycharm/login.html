@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" crossorigin="anonymous">
+  <script src="${contextPath}/resources/js/js.cookie.js"></script>
+	<style>
+
+div, ul, li { margin:0; padding:0; }
+
+#blogMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#blogMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#blogMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#blogMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#blogMenu ul li:hover ul {
+  display: block;
+}
+
+#blogMenu ul ul li {
+  float:none;
+}
+
+#mainMenu {
+  float:right;
+  margin:0px 5px 3px 5px;
+  padding:0 0 3px 0;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  float:left;
+  list-style-type:none;
+}
+
+#mainMenu a {
+  height:18px;
+  color:black;
+  font-size:11px;
+  padding:0 8px 0 8px;
+  text-decoration:none;
+}
+
+#mainMenu ul ul {
+  display:none;
+  position:absolute;
+  background-color:white;
+}
+
+#mainMenu ul li {
+  position:relative;
+
+}
+
+#mainMenu ul li:hover ul {
+  display: block;
+}
+
+#mainMenu ul ul li {
+  float:none;
+}
+
+#sub-menu > li >  a:hover {
+ color: red;
+}
+
+#sub-menu > li > a {
+  font-size: 13.5px;
+  position: relative;
+  padding: 15px 0px;
+  text-align: center;
+  color: #777575;
+}
+
+#sub-menu >li {
+  padding: 3px;
+}
+
+#sub-menu {
+  position: relative;
+  width: 100%;
+  background-size: 40px;
+
+  display: none;
+  text-align: center;
+  padding: 40px 0px 23px 0px;
+}
+
+#joo:hover{
+  color: red;
+}
+
+   .selectbox{
+      position: absolute;
+      right: 240px;
+      width: 150px;
+      text-align:right;
+      padding: 0px;
+      z-index: 10;
+      background-color: white;
+    }
+
+    select{
+    appearance : none;
+    -webkit-appearance: none;
+    width: 150px;
+    }
+
+    select::-ms-expand{
+    display:none;
+    }
+
+    select{
+
+		background: url("../static/direction.png") right center no-repeat;
+		background-size: 20px 20px;
+	}
+
+    .footer_inform{
+      display: inline-block;
+      margin: 10px 5px;
+      font-size: 12px;
+    }*/
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family:sans-serif;
+
+}
+
+
+
+.loginForm {
+  position:absolute;
+  width:460px;
+  height:400px;
+  padding: 0px, px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:460px;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.idForm{
+  border-bottom: 2px solid #adadad;
+  margin: 33px;
+  padding: 10px 3px 10px 0px;
+}
+
+.passForm{
+  position: relative;
+  top: -20px;
+  border-bottom: 2px solid #adadad;
+  margin: 33px;
+  padding: 10px 3px 10px 0px;
+}
+
+.id {
+  width: 400px;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:18px;
+  background: none;
+}
+
+.pw {
+  width: 400px;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:18px;
+  background: none;
+}
+
+.btn {
+  position:relative;
+  left:43.9%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:400px;
+  height:50px;
+  background-color: #F44A11;
+  background-position: left;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+  border-radius: 8px
+}
+
+.btn:hover {
+  background-position: right;
+}
+
+.bottomText {
+  text-align: center;
+  position: relative;
+  top: -25px
+}
+.bt {
+  color: #454443;
+  font-size: 13px;
+  font-weight: 5px;
+  text-decoration: none;
+}
+
+.check {
+  text-align: left;
+}
+
+/*체크박스 꾸미기*/
+.ch {
+  display: none;
+
+}
+
+.ch + label span{
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background-size: 82%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image:url("check.png");
+  vertical-align: bottom;
+}
+
+.ch:checked + label span{
+  background-image: url("../static/checked.png");
+  vertical-align: bottom;
+}
+
+.wrap {
+  position: absolute;
+  top: 150px;
+  left: 30px
+}
+
+</style>
+
+<script type="text/javascript">
+
+ $('html').click(function(e){
+    if(!$(e.target).hasClass("sel")){
+      var p = document.getElementById("select");
+      p.size = 1;
+    }
+  });
+
+  function f(obj){
+    obj.size = 6;
+    obj.zIndex = 10;
+  }
+
+
+$("#userId").val(Cookies.get('key'));
+    if($("#Id").val() != ""){
+        $("#idSaveCheck").attr("checked", true);
+    }
+
+$("#idSaveCheck").change(function(){
+    if($("#idSaveCheck").is(":checked")){
+        Cookies.set('key', $("#userId").val(), { expires: 7 });
+    }else{
+          Cookies.remove('key');
+    }
+});
+
+$("#userId").keyup(function(){
+    if($("#idSaveCheck").is(":checked")){
+        Cookies.set('key', $("#userId").val(), { expires: 7 });
+    }
+});
+
+  </script>
+
+</head>
+
+<body>
+
+<div style="display: inline-block; padding-left: 240px; font-size: 12px; color:#383737 ; padding-top: 8px;">
+  <strong>AK mall</strong>
+</div>
+
+<div style="padding-right: 260px; padding-top: 8px" id="blogMenu">
+<ul>
+<li ><a style="color: gray" href="{% url 'login' %}">로그인</a></li>
+<li><a style="color: gray" href="#">회원가입</a></li>
+<li><a style="color: gray" href="#">멤버십라운지</a></li>
+<li><a style="color: gray" href="#">매장찾기</a></li>
+<li><a style="color: gray" href="#">고객센터<strong style="font-size: 15px">∨</strong> </a>
+  <ul style="background-color: white; z-index: 100; border:thin ridge #E8E7E7">
+    <li><a href="#">Q&A</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">이용약관</a></li>
+  </ul>
+</li>
+<li><a style="font-size: 12px" href="#"><img style="vertical-align: top;" width="22px" height="22px" src="../static/card.png"><strong> 카드등록</strong></a></li>
+</ul>
+</div>
+<br><br><br>
+
+<div style="margin-top: -18px ;display: inline-block; padding-left: 240px; font-size: 12px; color:#383737;">
+  <a href="{% url 'main' %}"><img src="../static/logoh.png"></a>
+</div>
+
+
+<div style="padding-right: 260px;" id="mainMenu">
+<ul id="main-menu">
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px; " href="#"><strong>소개</strong></a>
+      <ul style="box-shadow: 10px 10px 15px #F2EEEE; z-index: 10;" id="sub-menu">
+        <li><a href="#"><strong>해피포인트 소개</strong></a></li>
+        <li><a href="#"><strong>해피포인트 카드</strong></a></li>
+        <li><a href="{% url 'brandintro' %}"><strong>제휴 브랜드</strong></a></li>
+        <li><a href="#"><strong>멤버십 라운지</strong></a></li>
+        <li><a href="#"><strong>해피포인트앱 소개</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>제휴</strong></a>
+      <ul style="z-index: 10; box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#" ><strong>제휴사 안내</strong></a></li>
+        <li><a href="#" ><strong>제휴카드 안내</strong></a></li>
+        <li><a href="#" ><strong>문화 제휴 안내</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>이벤트/쿠폰</strong></a>
+      <ul style="z-index: 10; box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#"><strong>진행 이벤트</strong></a></li>
+        <li><a href="#"><strong>당첨자발표</strong></a></li>
+        <li><a href="#"><strong>모바일 쿠폰 안내</strong></a></li>
+    </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 50px;" href="#"><strong>나눔</strong></a>
+      <ul style="z-index: 10; box-shadow: 10px 10px 15px #F2EEEE"id="sub-menu">
+        <li><a href="#"><strong>해피포인트 기부소개</strong></a></li>
+        <li><a href="#" ><strong>해피포인트 기부활동</strong></a></li>
+        <li><a href="#"><strong>해피버스데이 파티</strong></a></li>
+        <li><a href="#"><strong>해비버스데이파티<br>당첨자 발표</strong></a></li>
+      </ul>
+    </li>
+    <li><a id="joo" style="font-size: 17px; padding:0px 43px;" href="#"><strong>마이페이지</strong></a>
+    <ul style="z-index: 10; box-shadow: 10px 10px 15px #F2EEEE" id="sub-menu">
+        <li><a href="#"><strong>MY 포인트</strong></a></li>
+        <li><a href="#"><strong>MY 카드</strong></a></li>
+        <li><a href="#"><strong>MY 이벤트</strong></a></li>
+        <li><a href="#"><strong>회원정보</strong></a></li>
+        <li><a href="#"><strong>1:1 상담내역</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#"><img style="padding:0px 0px 0px 43px;" class="i" src="../static/alllogo.png" width="30" height="25"></a></li>
+</ul>
+</div>
+<hr style="border: solid 0.001px #E8E7E7;">
+<div style="font-size: 12px; color:#6F6D6D; padding-left: 240px; padding-top: 10px"><strong>Home > 로그인</strong></div>
+<br>
+<br>
+<div style="text-align: center;">
+  <div style="font-size: 35px; padding-bottom: 20px; font-weight: 600;">로그인</div>
+</div>
+
+<br><br><br><br><br>
+
+    <form action="/login/" method="post" class="loginForm">
+      {% csrf_token %}
+      <div class="idForm">
+        <input type="text" id="userid" name="userid" class="id" placeholder="아이디">
+      </div>
+      <div class="passForm">
+        <input type="password" id="userpw" name="userpw" class="pw" placeholder="비밀번호">
+      </div>
+      <div class="wrap" style="padding: 0px 285px 0px 0px;">
+        <input class="ch" type="checkbox" id="idSaveCheck">
+        <label for="idSaveCheck">
+          <span></span> 아이디 저장
+        </label>
+      </div>
+      <br><br>
+      <button type="submit" class="btn" onclick="button()">
+        로그인
+      </button>
+      <script>
+        let button = () => {
+          alert('login Button !')
+        }
+      </script>
+      <div class="bottomText">
+          <a class="bt" href="#">아이디 찾기</a> | <a class="bt" href="#">비밀번호 찾기</a> | <a class="bt" href="#">회원가입</a>
+      </div>
+
+      <a href="https://sepay.org/spm/join?regSiteCode=RF&ctgCode=1&subCode=1"><img style="padding: 60px 0px;" src="https://www.happypointcard.com/assets/pc/images/member/img-simple-login.png"></a>
+
+    </form>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<hr style="width: 100%">
+
+<footer>
+  <div style="margin-left: 239px; width: 1000px; margin-bottom:30px;">
+    <div style="float: left; width: 80%"><img src="../static/media/happy.png" style="vertical-align: middle; margin-bottom: 20px;">해피포인트 고객센터 080-320-1234 <small style="color: gray;">평일 AM 9시 ~ PM 7시 주말,공유일 휴무</small>
+    </div>
+
+    <div class="selectbox">
+      <select onclick="f(this)" class="sel" id="select" style="border-color: white; margin-bottom: 0px; z-index: 10;">
+        <option selected>패밀리 사이트</option>
+        <option>SPC</option>
+        <option>파리크라상</option>
+        <option>파리바게뜨</option>
+        <option>파스쿠찌</option>
+        <option>잠바주스</option>
+        <option>디퀸즈케이터링</option>
+        <option>배스킨라빈스</option>
+        <option>던킨도너츠</option>
+        <option>빚은</option>
+        <option>SPC외식 브랜드</option>
+        <option>브랜드몰</option>
+      </select>
+    </div>
+  </div>
+  <br>
+
+  <div style=" z-index: 1;">
+
+  <hr style="width: 68%; z-index: 1; ">
+
+  <div style="margin-left: 239px; padding: 0px; margin-right: 270px; display: inline-block; z-index: 1; ">
+    <div class="footer_inform">회원이용약관</div>
+    <div class="footer_inform"><b>개인정보처리방침</b></div>
+    <div class="footer_inform">위치기반 서비스 이용약관</div>
+    <div class="footer_inform">위치사업 이용약관</div>
+    <div class="footer_inform">이메일 무단수집거부</div>
+  </div>
+  <div style="display: inline-block; z-index: 1;"><img src="../static/media/logo.png" width="175px" height="37px" title="sns페이지 새창 이동"></div>
+
+  <div style="color: grey; margin-left: 242px; z-index: 1;">
+    <small>섹타나인 사업자 등록번호:113-86-10017 경기도 성남시 증원구 사기막골로31번길 18(상대원동)
+    <p style="padding: 0; margin:0; z-index: 1;">Copyright&copy;by SPC ALL RIGHTS RESERVED.</p></small>
+    <img src="https://www.happypointcard.com/assets/pc/images/common/layout/logo-norton.png" title="인증서 보기 새창 열림">
+    <img src="https://www.happypointcard.com/assets/pc/images/common/layout/logo-spc.png" title="SPC 홈페이지로 바로가기 - 새창 열림">
+  </div>
+
+</div>
+
+</footer>
+
+<br>
+
+{% if alert_flag %}
+    <script>alert("아이디 혹은 비밀번호가 잘못 되었습니다.로그인 실패")</script>
+{% endif %}
+
+</body>
+
+</html>
+
