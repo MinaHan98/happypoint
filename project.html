@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+</head>
+<body>
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- owl 캐러셀 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+<div class="carousel-1" data-carousel-1-autoplay-status="Y">
+    <div class="play" style="position: absolute; left:200; top:180;">시작</div>
+    <div class="stop" style="position: absolute; left:200; top:180;">정지</div>
+    <ul class="owl-carousel owl-theme">
+        <li class="item" style="background-image:url(https://front.happypointcard.com/upfiles/appMain/banner/normal/2020110502481711145321665417.png );"><div class="txt-btn">
+            <a href="#" class="txt-btn-2">1/2</a>
+        </div></li>
+        <li class="item" style="background-image:url(https://front.happypointcard.com/upfiles/appMain/banner/normal/2020110509470336271811046109.png);"><div class="txt-btn">
+            <a href="#" class="txt-btn-2">2/2</a>
+        </div></li>
+    </ul>
+</div>
+
+<style type="text/css">
+a.txt-btn-2 {
+    padding:4px 25px;
+    border:1px solid #fff;
+    border-radius:30px;
+    line-height:80;
+    letter-spacing:.05rem;
+    color:#fff;
+    transition:all .5s;
+    top:-3px;
+    opacity: 0.5;
+}
+
+    /* 노말라이즈 */
+body, ul, li {
+    margin:0;
+    padding:0;
+    list-style:none;
+    top: 130px;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.carousel-1 > .owl-carousel > .owl-stage-outer > .owl-stage > .owl-item > .item {
+    height:800px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav {
+    margin:0 !important;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav > div {
+    padding:0;
+    margin-right: 40px;
+    margin-left: 10px;
+    border-radius:0;
+    background-color:transparent;
+    color:white;
+    position:absolute;
+    top:40%;
+    left:0;
+    transform:translateY(-50%);
+    font-size:4rem;
+    opacity: 0.5;
+    background-size: 50rem;
+    width: 0.2px;
+}
+
+.carousel-1 > .owl-carousel > .owl-nav > div.owl-next {
+    left:auto;
+    right:0;
+}
+
+.carousel-1[data-carousel-1-autoplay-status="Y"] .play {
+    display: none;
+}
+
+.carousel-1[data-carousel-1-autoplay-status="N"] .stop {
+    display:none;
+}
+</style>
+
+<script type="text/javascript">
+function Carousel1__onTranslated() {
+    $('.carousel-1 > .owl-carousel').trigger('play.owl.autoplay');
+    
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'Y');
+}
+
+$('.carousel-1 > .owl-carousel').owlCarousel({
+    autoplay:true, // 오토 플레이
+    autoplayTimeout:6000, // 오토 플레이 시에 다음 슬라이드로 넘어가는 주기, 6초
+    loop:true, // 끝에서 다시 처음으로 시작
+    margin:0,
+    nav:true,
+    navText:['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+    responsive:{
+        0:{
+            items:1
+        }
+    },
+    autoplayHoverPause:false,
+    onTranslated: Carousel1__onTranslated,
+});
+
+$('.carousel-1 .play').on('click',function(){
+    $('.carousel-1 > .owl-carousel').trigger('play.owl.autoplay');
+    
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'Y');
+});
+
+$('.carousel-1 .stop').on('click',function(){
+    $('.carousel-1 > .owl-carousel').trigger('stop.owl.autoplay');
+    
+    $('.carousel-1').attr('data-carousel-1-autoplay-status', 'N');
+});
+</script>
+</body>
+</html>
